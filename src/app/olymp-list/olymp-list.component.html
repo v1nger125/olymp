@@ -1,0 +1,12 @@
+<div class="wrapper_size wrapper_bgcollor wrapper_flex wrapper_flex_helper">
+  <app-header class="header"></app-header>
+  <div class='list'>
+    <div class="list_item" *ngFor='let olymp of olymps'>
+      <span class="list_item_text">{{ olymp.lesson }}</span>
+      <span class="list_item_text">{{ olymp.caption }}</span>
+      <span class="list_item_text">{{ olymp.city }}</span>
+      <span class="list_item_text">{{ olymp.comment }}</span>
+      <a class="list_item_text" href="{{'olymp.website'}}">Перейти на сайт</a>
+    </div>
+  </div>
+</div>

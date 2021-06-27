@@ -1,0 +1,22 @@
+<div class="wrapper_size wrapper_bgcollor wrapper_flex">
+  <p class="title_text">Я-олимпиадник!</p>
+  <div class='registr'>
+    <p class="registr_title">Регистрация</p>
+    <form class='registr_form' [formGroup]="registrForm" (ngSubmit)="onSubmit()">
+      <input class='registr_form_input' type="text" id="login" formControlName="firstName" placeholder="Имя">
+      <input class='registr_form_input' type="text" id="login" formControlName="lastName" placeholder="Фамилия">
+      <input class='registr_form_input' type="text" id="login" formControlName="middleName" placeholder="Отчество">
+      <input class='registr_form_input' type="text" id="login" formControlName="sign" placeholder="Ученик/Учитель">
+      <input class='registr_form_input' type="text" id="login" formControlName="birthday" placeholder="Дата рождения">
+      <input class='registr_form_input' type="text" id="login" formControlName="region" placeholder="Регион">
+      <input class='registr_form_input' type="text" id="login" formControlName="city" placeholder="Город">
+      <input class='registr_form_input' type="text" id="login" formControlName="school" placeholder="Школа">
+      <input class='registr_form_input' type="text" id="login" formControlName="class" placeholder="Класс">
+      <input class='registr_form_input' type="text" id="login" formControlName="lesson" placeholder="Предмет(ы)">
+      <input class='registr_form_input' type="text" id="login" formControlName="phone" placeholder="Телефон">
+      <input class='registr_form_input' type="text" id="login" formControlName="email" placeholder="Логин">
+      <input class='registr_form_input' type="text" id="login" formControlName="password" placeholder="Пароль">
+      <button class='registr_form_button' type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+    </form>
+  </div>
+</div>

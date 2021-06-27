@@ -1,0 +1,15 @@
+<div class="wrapper_size wrapper_bgcollor wrapper_flex">
+  <p class="title_text">Я-олимпиадник!</p>
+  <div class='login'>
+    <p class="login_title">Выполните вход</p>
+    <form class='login_form' [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input class='login_form_input' type="text" id="login" formControlName="login" placeholder="Логин">
+      <input class='login_form_input' type="text" id="password" formControlName="password" placeholder="Пароль">
+      <button class='login_form_button' type="submit">ВОЙТИ</button>
+    </form>
+    <div class="login_footer">
+      <span class="login_footer_text">Новенький?</span>
+      <span class="login_footer_text login_link" [routerLink]="['/registration']">Зарегистрируйся!</span>
+    </div>
+  </div>
+</div>

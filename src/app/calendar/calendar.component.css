@@ -1,0 +1,24 @@
+.wrapper_flex_helper{
+  justify-content: flex-start;
+}
+.calendar{
+  width: 66%;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+.calendar_item{
+  width: 6vw;
+  height: 6vw;
+  border: 1px solid grey;
+  align-self: center;
+  justify-self: center;
+}
