@@ -44,6 +44,7 @@
   color: white;
   background-color: rgb(110, 220, 255);
   font-weight: 500;
+  border-radius: 5px;
 }
 .login_form_input{
   border-bottom: 1px solid grey;
@@ -62,4 +63,7 @@
 .login_link{
   cursor: pointer;
   text-decoration: underline;
+}
+.error{
+  background-color: rgb(255, 210, 210);
 }

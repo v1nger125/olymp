@@ -1,5 +1,6 @@
 <div class="wrapper_size wrapper_bgcollor wrapper_flex wrapper_flex_helper">
   <app-header class="header"></app-header>
+  <input id="date" type="month" class="month" [formControl]="month" (change)='changeMonth()'>
   <div class="calendar">
     <span class='calendar_item' *ngFor='let day of days'>
       {{ day }}

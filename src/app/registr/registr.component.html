@@ -3,19 +3,16 @@
   <div class='registr'>
     <p class="registr_title">Регистрация</p>
     <form class='registr_form' [formGroup]="registrForm" (ngSubmit)="onSubmit()">
-      <input class='registr_form_input' type="text" id="login" formControlName="firstName" placeholder="Имя">
-      <input class='registr_form_input' type="text" id="login" formControlName="lastName" placeholder="Фамилия">
-      <input class='registr_form_input' type="text" id="login" formControlName="middleName" placeholder="Отчество">
-      <input class='registr_form_input' type="text" id="login" formControlName="sign" placeholder="Ученик/Учитель">
-      <input class='registr_form_input' type="text" id="login" formControlName="birthday" placeholder="Дата рождения">
-      <input class='registr_form_input' type="text" id="login" formControlName="region" placeholder="Регион">
-      <input class='registr_form_input' type="text" id="login" formControlName="city" placeholder="Город">
-      <input class='registr_form_input' type="text" id="login" formControlName="school" placeholder="Школа">
-      <input class='registr_form_input' type="text" id="login" formControlName="class" placeholder="Класс">
-      <input class='registr_form_input' type="text" id="login" formControlName="lesson" placeholder="Предмет(ы)">
-      <input class='registr_form_input' type="text" id="login" formControlName="phone" placeholder="Телефон">
-      <input class='registr_form_input' type="text" id="login" formControlName="email" placeholder="Логин">
-      <input class='registr_form_input' type="text" id="login" formControlName="password" placeholder="Пароль">
+      <input class='registr_form_input' type="text" id="firstName" formControlName="firstName" placeholder="Имя" [ngClass]="{error:registrForm.controls.firstName.invalid && registrForm.controls.firstName.touched}">
+      <input class='registr_form_input' type="text" id="lastName" formControlName="lastName" placeholder="Фамилия" [ngClass]="{error:registrForm.controls.lastName.invalid && registrForm.controls.lastName.touched}">
+      <input class='registr_form_input' type="text" id="middleName" formControlName="middleName" placeholder="Отчество" [ngClass]="{error:registrForm.controls.middleName.invalid && registrForm.controls.middleName.touched}">
+      <select class='registr_form_input' id="sign" formControlName="sign">
+        <option *ngFor="let sign of signs" [ngValue]="sign">
+          {{ sign }}
+        </option>
+      </select>
+      <input class='registr_form_input' type="text" id="email" formControlName="email" placeholder="Почта" [ngClass]="{error:registrForm.controls.email.invalid && registrForm.controls.email.touched}">
+      <input class='registr_form_input' type="text" id="password" formControlName="password" placeholder="Придумайте пароль" [ngClass]="{error:registrForm.controls.password.invalid && registrForm.controls.password.touched}">
       <button class='registr_form_button' type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
     </form>
   </div>

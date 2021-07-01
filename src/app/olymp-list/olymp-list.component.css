@@ -6,25 +6,57 @@
   background-color: white;
   border: 1px solid black;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  margin-top: 2%;
   margin-bottom: 2%;
-  border-left: none;
-  border-bottom: none;
+  min-height: 3vw;
 }
 .list_item{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   width: 100%;
-  height: 5%;
-  max-height: 80px;
-  border-bottom: 1px solid black;
+  height: 3vw;
 }
 .list_item_text{
   width: 20%;
   height: 100%;
   overflow: hidden;
-  border-left: 1px solid black;
   font-size: 14px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.filters{
+  width: 66%;
+  height: 2vw;
+  margin-top: 1vw;
+}
+.filters_area::placeholder{
+  color: lightslategrey;
+}
+.filters_area{
+  color: lightslategrey;
+  background-color: rgb(110, 220, 255);
+  width: 10%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.lesson, .city{
+  width: 10%;
+}
+.caption, .comment{
+  width: 35%;
+}
+.link{
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  background-color: rgb(110, 220, 255);
+  align-self: center;
+  height: 3vw;
+}
+.size_helper{
+  height: auto;
 }

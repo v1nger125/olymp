@@ -6,8 +6,7 @@
   background-color: white;
   border: 1px solid black;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  margin-top: 2vw;
-  margin-bottom: 2vw;
+  margin-bottom: 2%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-column-gap: 10px;
@@ -21,4 +20,21 @@
   border: 1px solid grey;
   align-self: center;
   justify-self: center;
+}
+.month{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 1vw;
+  height: 2vw;
+  color: lightslategrey;
+  background-color: rgb(110, 220, 255);
+  font-size: 24px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.month::placeholder{
+  color: lightslategrey;
+}
+.month::selection {
+  background: rgb(110, 220, 255);
 }

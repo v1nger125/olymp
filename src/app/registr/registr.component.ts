@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,20 +9,15 @@ import { Router } from '@angular/router';
 })
 export class RegistrComponent implements OnInit {
 
+  signs = ["Ученик", "Учитель"]
+
   registrForm = this.formBuilder.group({
-    firstName: '',
-    lastName: '',
-    middleName: '',
-    sign: '',
-    birthday: '',
-    region: '',
-    city: '',
-    school: '',
-    class: '',
-    lesson: '',
-    phone: '',
-    email: '',
-    password: ''
+    firstName: ['', [Validators.required, Validators.pattern('[a-zA-ZЁёА-я]*')]],
+    lastName: ['', [Validators.required, Validators.pattern('[a-zA-ZЁёА-я]*')]],
+    middleName: ['', [Validators.pattern('[a-zA-ZЁёА-я]*')]],
+    sign: this.signs[0],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]]
   })
 
   constructor(private formBuilder: FormBuilder,
@@ -32,8 +27,9 @@ export class RegistrComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.warn(this.registrForm.value);
-    this.router.navigate(['/login']);
+    if(this.registrForm.valid){
+      this.router.navigate(['/login']);
+    }
   }
 
 }
