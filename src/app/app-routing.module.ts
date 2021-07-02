@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddOlympComponent } from './add-olymp/add-olymp.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { LoginComponent } from './login/login.component';
 import { OlympListComponent } from './olymp-list/olymp-list.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'list', component: OlympListComponent},
   {path: 'user-list', component: UserOlympListComponent},
   {path: 'calendar', component: CalendarComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'new-olymp', component: AddOlympComponent}
 ];
 
 @NgModule({

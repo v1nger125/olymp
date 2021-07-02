@@ -8,15 +8,15 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   margin-bottom: 2%;
   min-height: 3vw;
+  border-bottom: none;
 }
 .list_item{
   display: flex;
   width: 100%;
-  height: 3vw;
+  height: 5vw;
+  border-bottom: 1px solid black;
 }
 .list_item_text{
-  width: 20%;
-  height: 100%;
   overflow: hidden;
   font-size: 14px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,7 +27,19 @@
   margin-top: 1vw;
 }
 .filters_area::placeholder{
-  color: lightslategrey;
+  color: rgb(94, 96, 99);
+}
+.filters_add{
+  color: rgb(94, 96, 99);
+  cursor: pointer;
+  background-color: rgb(110, 220, 255);
+  width: 10%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .filters_area{
   color: lightslategrey;
@@ -40,23 +52,56 @@
   font-size: 16px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.lesson, .city{
+.list_item_info{
   width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.lesson, .city {
+  margin-top: 5px;
+  margin-left: 5px;
 }
 .caption, .comment{
   width: 35%;
+  border-left: 1px solid black;
+  padding: 10px;
+  padding-top: 5px;
+}
+.list_item_end{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.list_item_buttons{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.comment{
+  border-right: 1px solid black;
 }
 .link{
-  width: 10%;
+  cursor: pointer;
+  margin: 5px;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
   background-color: rgb(110, 220, 255);
-  align-self: center;
   height: 3vw;
 }
 .size_helper{
   height: auto;
+}
+.list_item_date{
+  overflow: hidden;
+  margin-top: 5px;
 }

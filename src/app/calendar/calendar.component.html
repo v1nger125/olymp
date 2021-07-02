@@ -3,7 +3,8 @@
   <input id="date" type="month" class="month" [formControl]="month" (change)='changeMonth()'>
   <div class="calendar">
     <span class='calendar_item' *ngFor='let day of days'>
-      {{ day }}
+      <span class="calendar_item_text">{{ day.day }}</span>
+      <span *ngIf="day.event != ''" class="calendar_item_text calendar_item_text_event">{{ day.event }}</span>
     </span>
   </div>
 </div>

@@ -6,19 +6,17 @@
       <input class='profile_form_input' type="text" id="firstName" formControlName="firstName" placeholder="Имя" [ngClass]="{error:profileForm.controls.firstName.invalid && profileForm.controls.firstName.touched}">
       <input class='profile_form_input' type="text" id="lastName" formControlName="lastName" placeholder="Фамилия" [ngClass]="{error:profileForm.controls.lastName.invalid && profileForm.controls.lastName.touched}">
       <input class='profile_form_input' type="text" id="middleName" formControlName="middleName" placeholder="Отчество" [ngClass]="{error:profileForm.controls.middleName.invalid && profileForm.controls.middleName.touched}">
-      <select class='profile_form_input' id="sign" formControlName="sign">
-        <option *ngFor="let sign of signs" [ngValue]="sign">
-          {{ sign }}
-        </option>
-      </select>
       <input class='profile_form_input' type="date" id="birthday" formControlName="birthday" placeholder="Дата рождения">
       <input class='profile_form_input' type="text" id="region" formControlName="region" placeholder="Регион">
       <input class='profile_form_input' type="text" id="city" formControlName="city" placeholder="Город">
       <input class='profile_form_input' type="text" id="school" formControlName="school" placeholder="Школа">
       <input class='profile_form_input' type="text" id="class" formControlName="class" placeholder="Класс">
-      <input class='profile_form_input' type="tel" id="phone" formControlName="phone" placeholder="Телефон">
-      <input class='profile_form_input' type="text" id="email" formControlName="email" placeholder="Почта" [ngClass]="{error:profileForm.controls.email.invalid && profileForm.controls.email.touched}">
-      <input class='profile_form_input' type="text" id="password" formControlName="password" placeholder="Пароль" [ngClass]="{error:profileForm.controls.password.invalid && profileForm.controls.password.touched}">
+      <div class='profile_form_input'>
+        {{ sign }}
+      </div>
+      <div class='profile_form_input'>
+        {{ email }}
+      </div>
       <button class='profile_form_button' type="submit">СОХРАНИТЬ</button>
     </form>
   </div>

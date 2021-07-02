@@ -13,16 +13,22 @@ export class OlympListComponent implements OnInit {
   lessonFilter = new FormControl('');
   cityFilter = new FormControl('');
   dynamicStyle: string[];
+  sign = 'Ученик'
+  mainList = true
 
-  olymps = [];
+  olymps;
 
   constructor(private requester: RequestService) { }
 
   ngOnInit() {
+    const subsUser = this.requester.getUser().subscribe(data => {
+      subsUser.unsubscribe();
+      this.sign = data['role'] == 'ROLE_CHILD' ? "Ученик" : data['role'] == 'ROLE_TEACHER' ? 'Учитель' : 'Администратор';
+    })
     const subs = this.requester.getOlymps().subscribe(data => {
       this.olymps = data;
       subs.unsubscribe();
-      this.dynamicStyle = new Array(this.olymps.length).fill("")
+      this.dynamicStyle = new Array(this.olymps.length).fill("");
     });
   }
 
@@ -33,5 +39,11 @@ export class OlympListComponent implements OnInit {
     else{
       this.dynamicStyle[index] = '';
     }
+  }
+
+  addToMe(userId){
+    const subs = this.requester.addOlympToUser(userId).subscribe(()=>{
+      subs.unsubscribe()
+    })
   }
 }

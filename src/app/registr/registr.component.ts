@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-registr',
@@ -21,14 +22,32 @@ export class RegistrComponent implements OnInit {
   })
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private authService: AuthService) { }
 
   ngOnInit() {
   }
 
+
   onSubmit(): void{
     if(this.registrForm.valid){
-      this.router.navigate(['/login']);
+      const subs = this.authService.registr({
+        "email" : this.registrForm.value['email'],
+        "name" : this.registrForm.value['firstName'],
+        "surname" : this.registrForm.value['lastName'],
+        "patronymic" : this.registrForm.value['middleName'],
+        "role" : this.registrForm.value['sign'] == this.signs[0] ? "ROLE_CHILD" : "ROLE_TEACHER",
+        "password":  this.registrForm.value['password'],
+        "confirmPassword" : this.registrForm.value['password']
+      }).subscribe({
+        next: () => {
+          subs.unsubscribe();
+          this.router.navigate(['/login']);
+        },
+        error: (err) => {
+          console.error(err);
+        }
+      })
     }
   }
 

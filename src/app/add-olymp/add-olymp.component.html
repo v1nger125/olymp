@@ -1,0 +1,15 @@
+<div class="wrapper_size wrapper_bgcollor wrapper_flex wrapper_flex_helper">
+  <app-header class="header"></app-header>
+  <div class="add">
+    <p class="add_title">Новая олимпиада</p>
+    <form class='add_form' [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <input class='add_form_input' type="text" id="title" formControlName="title" placeholder="Название" [ngClass]="{error:addForm.controls.title.invalid && addForm.controls.title.touched}">
+      <textarea class='add_form_input input_caption' id="caption" formControlName="caption" placeholder="Описание" [ngClass]="{error:addForm.controls.caption.invalid && addForm.controls.caption.touched}"></textarea>
+      <input class='add_form_input' type="text" id="location" formControlName="location" placeholder="Город" [ngClass]="{error:addForm.controls.location.invalid && addForm.controls.location.touched}">
+      <input class='add_form_input' type="text" id="lesson" formControlName="lesson" placeholder="Предмет" [ngClass]="{error:addForm.controls.lesson.invalid && addForm.controls.lesson.touched}">
+      <input class='add_form_input' type="text" id="link" formControlName="link" placeholder="Ссылка" [ngClass]="{error:addForm.controls.link.invalid && addForm.controls.link.touched}">
+      <input class='add_form_input' type="date" id="dateOfOlympiads" formControlName="dateOfOlympiads" placeholder="Ссылка" [ngClass]="{error:addForm.controls.dateOfOlympiads.invalid && addForm.controls.dateOfOlympiads.touched}">
+      <button class='add_form_button' type="submit">ДОБАВИТЬ</button>
+    </form>
+  </div>
+</div>

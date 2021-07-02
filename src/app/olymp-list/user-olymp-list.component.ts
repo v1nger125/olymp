@@ -13,11 +13,11 @@ export class UserOlympListComponent implements OnInit {
   cityFilter = new FormControl('');
   dynamicStyle: string[];
 
-  olymps = []
+  olymps
   constructor(private requester: RequestService) { }
 
   ngOnInit() {
-    const subs = this.requester.getOlymps().subscribe(data => {
+    const subs = this.requester.getUserOlymps().subscribe(data => {
       this.olymps = data;
       subs.unsubscribe();
       this.dynamicStyle = new Array(this.olymps.length).fill("")

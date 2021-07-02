@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserOlympListComponent } from './olymp-list/user-olymp-list.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddOlympComponent } from './add-olymp/add-olymp.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
     HeaderComponent,
     UserOlympListComponent,
     CalendarComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddOlympComponent
   ],
   imports: [
     BrowserModule,

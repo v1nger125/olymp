@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void{
     if(this.loginForm.valid){
-      this.router.navigate(['/list']);
       const val = this.loginForm.value;
       const subs = this.auth.login(val.login, val.password).subscribe({
         next: (resp) => {

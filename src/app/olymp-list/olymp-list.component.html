@@ -1,17 +1,27 @@
 <div class="wrapper_size wrapper_bgcollor wrapper_flex wrapper_flex_helper">
   <app-header class="header"></app-header>
   <div class="filters">
-    <input class="filters_area" id='lesson' type="text" [formControl]="lessonFilter" placeholder="Предмет">
-    <input class="filters_area" id="city" type="text" [formControl]="cityFilter" placeholder="Город">
+    <label class="filters_area" for="lesson">Поиск по </label>
+    <input class="filters_area" id='lesson' type="text" [formControl]="lessonFilter" placeholder="предмет">
+    <input class="filters_area" id="city" type="text" [formControl]="cityFilter" placeholder="город">
+    <span class="filters_add" *ngIf="(sign != 'Ученик' && mainList)" [routerLink]='["/new-olymp"]'>добавить</span>
   </div>
   <div class='list'>
     <div *ngFor='let olymp of olymps; index as i;'>
-      <div class="list_item" *ngIf='olymp.lesson.includes(lessonFilter.value) && olymp.city.includes(cityFilter.value)' [ngClass]='dynamicStyle[i]' (click)='toggleStyle(i)'>
-        <span class="list_item_text lesson">{{ olymp.lesson }}</span>
-        <span class="list_item_text city">{{ olymp.city }}</span>
-        <span class="list_item_text caption">{{ olymp.caption }}</span>
-        <span class="list_item_text comment">{{ olymp.comment }}</span>
-        <a class="list_item_text link" href="{{'olymp.website'}}">Сайт</a>
+      <div class="list_item" *ngIf='olymp.lesson.includes(lessonFilter.value) && olymp.location.includes(cityFilter.value)' [ngClass]='dynamicStyle[i]'>
+        <div class="list_item_info" (click)='toggleStyle(i)'>
+          <span class="list_item_text lesson">{{ olymp.lesson }}</span>
+          <span class="list_item_text city">{{ olymp.location }}</span>
+        </div>
+        <span class="list_item_text caption" (click)='toggleStyle(i)'>{{ olymp.caption }}</span>
+        <span class="list_item_text comment" (click)='toggleStyle(i)'>{{ olymp.comment }}</span>
+        <div class="list_item_end">
+          <div class="list_item_buttons">
+            <a class="list_item_text link" href="{{'olymp.link'}}">Сайт</a>
+            <span *ngIf='mainList' class="list_item_text link" (click)=addToMe(olymp.id)>Пойду</span>
+          </div>
+          <span class="list_item_date">{{ olymp.date }}</span>
+        </div>
       </div>
     </div>
   </div>
